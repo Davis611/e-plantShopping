@@ -2,11 +2,18 @@ import React, { useState,useEffect } from 'react';
 import './ProductList.css'
 import CartItem from './CartItem';
 import { addItem } from './CartSlice';
+import { useSelector } from 'react-redux';
 
 function ProductList() {
     const [showCart, setShowCart] = useState(false); 
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
     const [addedToCart, setAddedToCart] = useState({}); // state to store the added items to the cart 
+
+    const CartItems = useSelector((state) => state.cart?.items || []);
+    const cartCount = CartItems.reduce(
+        (total, item) => total + item.quantity,
+        0
+    );
 
     const handleAddToCart = (product) => {
         dispatch(addItem(product));
