@@ -2,6 +2,7 @@
 body, h1, ul {
     margin: 0;
     padding: 0;
+    align-items:center;
 }
 
 /* Set a background color */

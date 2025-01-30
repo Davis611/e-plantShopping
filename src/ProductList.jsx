@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import './ProductList.css'
 import CartItem from './CartItem';
 import { addItem } from './CartSlice';
-import { useSelector } from 'react-redux';
+
 
 function ProductList() {
     const [showCart, setShowCart] = useState(false); 
